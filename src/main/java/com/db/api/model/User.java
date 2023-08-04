@@ -1,5 +1,6 @@
 package com.db.api.model;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +9,16 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "client")
-public class Client {
+@Table(name = "user")
+public class User {
     @Id
     @GeneratedValue
     private Long id;
+
+    @Column(unique = true)
     private String name;
+
+    @Column(unique = true)
     private String email;
-
-
-    // getter, setters, contructors
+    private String role;
 }

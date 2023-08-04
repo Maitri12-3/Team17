@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clients")
+@CrossOrigin(origins = "http://localhost:8080")
 public class ClientsController {
 
     private final ClientRepository clientRepository;
