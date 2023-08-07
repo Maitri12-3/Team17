@@ -16,7 +16,6 @@ import java.util.List;
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue
     private Long id;
 
     @Column(unique = true)
@@ -25,12 +24,12 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    @JoinTable(
-            name="users_roles",
-            joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
-            inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
-    private List<Role> roles = new ArrayList<>();
+//    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+//    @JoinTable(
+//            name="users_roles",
+//            joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
+//            inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
+//    private List<Role> roles = new ArrayList<>();
 
     @Column(nullable=false)
     private String password;

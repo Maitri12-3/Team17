@@ -1,14 +1,14 @@
 package com.db.api.service.user;
 
+import com.db.api.dto.LoginDTO;
 import com.db.api.dto.UserDTO;
-import com.db.api.model.User;
-
-import java.util.List;
 
 public interface UserService {
-    void saveUser(UserDTO userDto);
-
-    User findUserByEmail(String email);
-
-    List<UserDTO> findAllUsers();
+//    void saveUser(UserDTO userDto);
+//
+//    User findUserByEmail(String email);
+//
+//    List<UserDTO> findAllUsers();
+    String addUser(UserDTO userDTO);
+    LoginMessage loginEmployee(LoginDTO loginDTO);
 }
