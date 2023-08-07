@@ -31,6 +31,8 @@ public class SpringSecurity {
                         authorize.antMatchers("/register/**").permitAll()
                                 .antMatchers("/index").permitAll()
                                 .antMatchers("/users").permitAll()
+                                .antMatchers("**").permitAll()
+                                .antMatchers("/h2-console/**").permitAll()
 //                                hasRole("ADMIN")
                 )
                 .formLogin(
@@ -64,6 +66,7 @@ public class SpringSecurity {
 //        return http.build();
 //    } .permitAll()
 //                );
+        http.headers().frameOptions().disable();
         return http.build();
     }
 
