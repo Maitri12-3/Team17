@@ -1,27 +1,16 @@
-package com.db.api.model;
+package com.db.api.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @Getter
 @Setter
-@Entity
-@Table(name = "trade")
-public class Trade {
-
-    @Id
-    @GeneratedValue
-    private Long id;
+public class TradeDTO {
+    private Long securityId;
     private Long bookId;
     private Long counterpartyId;
-
-    @ManyToOne
-    @JoinColumn(name = "securityId")
-    private Security security;
-
     private Long quantity;
     private String status;
     private Long price;
@@ -29,4 +18,5 @@ public class Trade {
     private Date tradeDate;
     private Date settlementDate;
 
+    // Getters and setters
 }
