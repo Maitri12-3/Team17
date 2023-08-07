@@ -15,8 +15,8 @@ public class TradeDTO {
     private String status;
     private Long price;
     private Boolean buySell;
-    private Date tradeDate;
-    private Date settlementDate;
+    private Date tradeDate = new Date();
+    private Date settlementDate = new Date();
 
     // Getters and setters
 }

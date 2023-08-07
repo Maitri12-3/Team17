@@ -1,7 +1,10 @@
 package com.db.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,8 +21,10 @@ public class Trade {
     private Long bookId;
     private Long counterpartyId;
 
-    @ManyToOne
-    @JoinColumn(name = "securityId")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "security_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
     private Security security;
 
     private Long quantity;

@@ -34,15 +34,6 @@ public class SecurityController {
         return ResponseEntity.created(new URI("/securities/" + savedSecurity.getId())).body(savedSecurity);
     }
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity updateClient(@PathVariable Long id, @RequestBody Security security) {
-//        Security currentSecurity = securityRepository.findById(id).orElseThrow(RuntimeException::new);
-//        currentSecurity.setName(client.getName());
-//        currentSecurity.setEmail(client.getEmail());
-//        currentSecurity = clientRepository.save(client);
-//
-//        return ResponseEntity.ok(currentClient);
-//    }
     @DeleteMapping("/{id}")
     public ResponseEntity deleteClient(@PathVariable Long id) {
         securityRepository.deleteById(id);

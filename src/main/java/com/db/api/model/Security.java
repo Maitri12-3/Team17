@@ -8,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @Getter
@@ -34,7 +35,7 @@ public class Security {
     private Double faceValue;
     @NotEmpty
     private String status;
-
-    @OneToMany(mappedBy = "security", cascade = CascadeType.ALL)
-    private List<Trade> trades = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "security_id", cascade = CascadeType.ALL)
+//    private Set<Trade> trades;
 }
