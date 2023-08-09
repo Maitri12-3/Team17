@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin
 public class TradeController {
 
     @Autowired

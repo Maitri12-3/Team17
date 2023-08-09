@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/security")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin
 public class SecurityController {
     private final SecurityRepository securityRepository;
     public SecurityController(SecurityRepository securityRepository) {
